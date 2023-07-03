@@ -1,7 +1,7 @@
 <script setup>
 import Navi from "./components/Navi.vue";
-import Content from "./components/Navi.vue";
-import Foot from "./components/Navi.vue";
+import Content from "./components/Content.vue";
+import Foot from "./components/Foot.vue";
 
 import 'materialize-css/dist/css/materialize.min.css';
 import 'materialize-css/dist/js/materialize.min.js';
@@ -32,6 +32,6 @@ export default {
   <Foot />
 </template>
 
-<style scoped>
+<style>
 
 </style>
