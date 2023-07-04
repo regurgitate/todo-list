@@ -15,5 +15,7 @@ export default {
 </template>
 
 <style scoped>
-
+footer {
+  padding: 0;
+}
 </style>

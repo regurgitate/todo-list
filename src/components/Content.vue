@@ -1,14 +1,17 @@
-<script>
-export default {
-
-}
+<script setup>
+import Task from "./Task.vue";
+import AddForm from "./AddForm.vue";
 </script>
 
 <template>
-  <div class="rout-view container">
+  <div class="rout-view">
     <div class="row">
-      <div class="col s12">
-        Content
+      <div class="col s5 offset-s1">
+        <Task />
+        <Task />
+      </div>
+      <div class="col s5">
+        <AddForm />
       </div>
     </div>
   </div>
@@ -16,6 +19,6 @@ export default {
 
 <style scoped>
 .rout-view {
-  min-height: calc(100vh - 134px);
+  min-height: calc(100vh - 114px);
 }
 </style>
