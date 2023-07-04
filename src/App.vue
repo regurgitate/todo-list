@@ -69,7 +69,8 @@ export default {
         {
           name: "Completed",
           color: "green darken-1",
-          icon: "done"
+          icon: "done",
+          text: "text-decoration: line-through"
         },
         {
           name: "On Hold",
@@ -79,9 +80,19 @@ export default {
         {
           name: "Abandoned",
           color: "brown lighten-1",
-          icon: "highlight_off"
+          icon: "highlight_off",
+          text: "text-decoration: line-through"
         },
       ]
+    }
+  },
+  methods: {
+    deleteTask(id) {
+      const index = this.toDoList.findIndex(item => item.id === id);
+
+      if (index !== -1) {
+        this.toDoList.splice(index, 1);
+      }
     }
   }
 }
@@ -90,7 +101,7 @@ export default {
 
 <template>
   <Navi />
-  <Content :data="toDoList" :statuses="statuses" />
+  <Content :data="toDoList" :statuses="statuses" @deleteTask="deleteTask($event)" />
   <Foot />
 </template>
 
