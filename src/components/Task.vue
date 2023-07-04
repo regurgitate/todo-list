@@ -1,16 +1,19 @@
 <script setup>
-const props = defineProps(['task']);
+const props = defineProps(['task', 'statusInfo']);
 </script>
 
+<script>
+
+</script>
 
 <template>
-  <div class="card blue-grey darken-1">
+  <div class="card" :class="statusInfo.color">
     <div class="card-content white-text">
       <span class="card-title">{{ task.title }}</span>
       <p>{{ task.content }}</p>
     </div>
     <div class="card-action white-text">
-      <i class="material-icons icon-left">send</i>
+      <i class="material-icons icon-left">{{ statusInfo.icon }}</i>
       <span>{{ task.status }}</span>
       <span class="right">
         <i class="material-icons icon-right">create</i>

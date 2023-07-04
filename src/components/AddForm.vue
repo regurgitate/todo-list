@@ -1,5 +1,5 @@
 <script setup>
-
+const props = defineProps(['statuses']);
 </script>
 
 <script>
@@ -39,11 +39,7 @@ export default {
         </div>
         <div class="input-field">
           <select ref="select">
-            <option value="New">New</option>
-            <option value="In Progress">In progress</option>
-            <option value="Completed">Completed</option>
-            <option value="On Hold">On Hold</option>
-            <option value="Abandoned">Abandoned</option>
+            <option v-for="status in statuses" :key="status.name" value="status.name">{{ status.name }}</option>
           </select>
           <label>Select status</label>
         </div>

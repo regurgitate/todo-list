@@ -54,6 +54,33 @@ export default {
           status: "In Progress",
           id: 7
         }
+      ],
+      statuses: [
+        {
+          name: "New",
+          color: "cyan",
+          icon: "fiber_new"
+        },
+        {
+          name: "In Progress",
+          color: "orange",
+          icon: "build"
+        },
+        {
+          name: "Completed",
+          color: "green darken-1",
+          icon: "done"
+        },
+        {
+          name: "On Hold",
+          color: "deep-purple",
+          icon: "block"
+        },
+        {
+          name: "Abandoned",
+          color: "brown lighten-1",
+          icon: "highlight_off"
+        },
       ]
     }
   }
@@ -63,7 +90,7 @@ export default {
 
 <template>
   <Navi />
-  <Content :data="toDoList" />
+  <Content :data="toDoList" :statuses="statuses" />
   <Foot />
 </template>
 
