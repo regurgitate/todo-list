@@ -12,13 +12,48 @@ export default {
   data() {
     return {
       toDoList: [
-        "Laundry",
-        "Shopping",
-        "Take out the garbage",
-        "Interview exercise",
-        "Squaring the circle",
-        "Doubling the cube",
-        "Angle trisection"
+        {
+          title: "Laundry",
+          content: "three loads of laundry to do - colored, white, and delicate",
+          status: "New",
+          id: 1
+        },
+        {
+          title: "Shopping",
+          content: "bred, milk, a car, fruits, butter",
+          status: "Completed",
+          id: 2
+        },
+        {
+          title: "Take out the garbage",
+          content: "Now I have to wait because the communal trash bin is under renovation",
+          status: "On Hold",
+          id: 3
+        },
+        {
+          title: "Interview exercise",
+          content: "I have 4 days more to complete all tasks",
+          status: "In Progress",
+          id: 4
+        },
+        {
+          title: "Squaring the circle",
+          content: "This is too tricky for me to complete",
+          status: "Abandoned",
+          id: 5
+        },
+        {
+          title: "Doubling the cube",
+          content: "Man I tell you I thought I'm better at math",
+          status: "Abandoned",
+          id: 6
+        },
+        {
+          title: "Angle trisection",
+          content: "Homework for next week",
+          status: "In Progress",
+          id: 7
+        }
       ]
     }
   }
@@ -28,7 +63,7 @@ export default {
 
 <template>
   <Navi />
-  <Content />
+  <Content :data="toDoList" />
   <Foot />
 </template>
 

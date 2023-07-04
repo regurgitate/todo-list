@@ -19,7 +19,6 @@ export default {
   methods: {
     submit: function() {
       this.$refs.form.reset();
-      //document.querySelectorAll("form").forEach(form => form.reset());
     }
   }
 }
@@ -40,11 +39,11 @@ export default {
         </div>
         <div class="input-field">
           <select ref="select">
-            <option value="new">New</option>
-            <option value="inProgress">In progress</option>
-            <option value="completed">Completed</option>
-            <option value="onHold">On Hold</option>
-            <option value="abandoned">Abandoned</option>
+            <option value="New">New</option>
+            <option value="In Progress">In progress</option>
+            <option value="Completed">Completed</option>
+            <option value="On Hold">On Hold</option>
+            <option value="Abandoned">Abandoned</option>
           </select>
           <label>Select status</label>
         </div>

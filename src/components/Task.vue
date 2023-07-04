@@ -1,13 +1,34 @@
+<script setup>
+const props = defineProps(['task']);
+</script>
+
+
 <template>
   <div class="card blue-grey darken-1">
     <div class="card-content white-text">
-      <span class="card-title">Card Title</span>
-      <p>I am a very simple card. I am good at containing small bits of information.
-      I am convenient because I require little markup to use effectively.</p>
+      <span class="card-title">{{ task.title }}</span>
+      <p>{{ task.content }}</p>
     </div>
-    <div class="card-action">
-      <a href="#">This is a link</a>
-      <a href="#">This is a link</a>
+    <div class="card-action white-text">
+      <i class="material-icons icon-left">send</i>
+      <span>{{ task.status }}</span>
+      <span class="right">
+        <i class="material-icons icon-right">create</i>
+        <i class="material-icons icon-right">delete_sweep</i>
+      </span>
     </div>
   </div>
 </template>
+
+<style scoped>
+.icon-left {
+  position: relative;
+  margin: 0 8px 0 0;
+  top: 6px;
+}
+.icon-right {
+  position: relative;
+  margin: 0 8px;
+  top: 6px;
+}
+</style>
