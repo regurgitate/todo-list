@@ -45,7 +45,7 @@ export default {
           <label for="title">Title</label>
         </div>
         <div class="input-field">
-          <textarea id="content" class="materialize-textarea" v-model="task.content"></textarea>
+          <textarea id="content" class="materialize-textarea validate" v-model="task.content"></textarea>
           <label for="content">Content</label>
         </div>
         <div class="input-field">

@@ -14,7 +14,9 @@ const props = defineProps(['data', 'statuses']);
           :key="datum.id"
           :task="datum"
           :statusInfo="statuses.filter(status => status.name === datum.status)[0]"
+          :statusesNames="statuses.map(status => status.name)"
           @deleteTask="$emit('deleteTask', $event)"
+          @updateTask="$emit('updateTask', $event)"
         />
         <h5 class="all-done" v-if="data.length === 0">
           It looks like you've done eveything :) Time to play

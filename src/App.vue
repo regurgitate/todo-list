@@ -98,6 +98,11 @@ export default {
       let maxID = Math.max(...this.toDoList.map(o => o.id));
       task.id = maxID === -Infinity ? 1 : ++maxID;
       this.toDoList.unshift(task);
+    },
+    updateTask(task) {
+      const index = this.toDoList.findIndex(item => item.id === task.id);
+
+      this.toDoList[index] = { ...task };
     }
   }
 }
@@ -111,6 +116,7 @@ export default {
     :statuses="statuses"
     @deleteTask="deleteTask($event)"
     @addNewTask="addNewTask($event)"
+    @updateTask="updateTask($event)"
   />
   <Foot />
 </template>
