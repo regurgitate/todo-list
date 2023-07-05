@@ -21,7 +21,7 @@ const props = defineProps(['data', 'statuses']);
         </h5>
       </div>
       <div class="col s5">
-        <AddForm :statuses="statuses" />
+        <AddForm :statuses="statuses" @addNewTask="$emit('addNewTask', $event)" />
       </div>
     </div>
   </div>

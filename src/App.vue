@@ -93,6 +93,11 @@ export default {
       if (index !== -1) {
         this.toDoList.splice(index, 1);
       }
+    },
+    addNewTask(task) {
+      let maxID = Math.max(...this.toDoList.map(o => o.id));
+      task.id = maxID === -Infinity ? 1 : ++maxID;
+      this.toDoList.unshift(task);
     }
   }
 }
@@ -101,7 +106,12 @@ export default {
 
 <template>
   <Navi />
-  <Content :data="toDoList" :statuses="statuses" @deleteTask="deleteTask($event)" />
+  <Content
+    :data="toDoList"
+    :statuses="statuses"
+    @deleteTask="deleteTask($event)"
+    @addNewTask="addNewTask($event)"
+  />
   <Foot />
 </template>
 

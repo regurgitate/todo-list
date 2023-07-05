@@ -9,8 +9,9 @@ export default {
       task: {
         title: '',
         content: '',
-        status: ''
-      }
+        status: 'New'
+      },
+      errorMsg: ""
     }
   },
   mounted() {
@@ -18,7 +19,17 @@ export default {
   },
   methods: {
     submit: function() {
-      this.$refs.form.reset();
+      if (!this.task.title || !this.task.content) {
+        this.errorMsg = "Fill up the form"
+      } else {
+        this.errorMsg = "";
+        const data = { ...this.task };
+        this.$emit("addNewTask", data);
+        this.task.title = "";
+        this.task.content = "";
+        this.task.status = "New";
+        this.$refs.form.reset();
+      }
     }
   }
 }
@@ -30,21 +41,22 @@ export default {
       <h5 class="title">Add new task</h5>
       <form ref="form" @submit.prevent="submit">
         <div class="input-field">
-          <input id="title" type="text" class="validate">
+          <input id="title" type="text" class="validate" v-model="task.title">
           <label for="title">Title</label>
         </div>
         <div class="input-field">
-          <textarea id="content" class="materialize-textarea"></textarea>
+          <textarea id="content" class="materialize-textarea" v-model="task.content"></textarea>
           <label for="content">Content</label>
         </div>
         <div class="input-field">
-          <select ref="select">
-            <option v-for="status in statuses" :key="status.name" value="status.name">{{ status.name }}</option>
+          <select ref="select" v-model="task.status">
+            <option v-for="status in statuses" :key="status.name">{{ status.name }}</option>
           </select>
           <label>Select status</label>
         </div>
         <div class="container">
           <div class="row center-align">
+            <p class="error">{{ errorMsg }}</p>
             <button class="btn waves-effect waves-light center">
               Submit
               <i class="material-icons right">send</i>
@@ -57,6 +69,10 @@ export default {
 </template>
 
 <style scoped>
+.error {
+  color: crimson;
+  font-weight: bold;
+}
 .title {
   margin-bottom: 30px;
 }
