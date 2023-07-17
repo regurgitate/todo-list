@@ -1,6 +1,13 @@
 # todo-list
 
-This template should help get you started developing with Vue 3 in Vite.
+Checkout working deploy here: https://todo-list-regurgitate.web.app/
+
+A little app created to showcase js skills and vue.js concepts.
+No cloud storage (all data are set up to the initial state during webpage refresh - this is a desired behavior).
+
+Requirements there were to be fulfilled:
+Simple to do app that should contain pre-set task list, a form to add new tasks, ability to delete created tasks and change theirs status. Vue.js components should be used, events and methods to handle user interaction.
+
 
 ## Recommended IDE Setup
 
